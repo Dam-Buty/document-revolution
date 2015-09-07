@@ -8,6 +8,10 @@ module.exports = function(Omega) {
       this.ee.on(event, callback);
     },
 
+    once: function(event, callback) {
+      this.ee.once(event, callback);
+    },
+
     emit: function(event, arg1, arg2, arg3, arg4, arg5) {
       this.ee.emit(event, arg1, arg2, arg3, arg4, arg5);
     },

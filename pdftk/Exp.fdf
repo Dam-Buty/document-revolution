@@ -1,0 +1,68 @@
+%FDF-1.2
+%‚„œ”
+1 0 obj 
+<<
+/FDF 
+<<
+/Fields [
+<<
+/Kids [
+<<
+/Kids [
+<<
+/V /
+/T (Add[0])
+>> 
+<<
+/Kids [
+<<
+/Kids [
+<<
+/V /
+/T (RemoveRow[0])
+>> 
+<<
+/V ()
+/T (Quantity[0])
+>> 
+<<
+/V ()
+/T (Total[0])
+>> 
+<<
+/V ()
+/T (ItemIndex[0])
+>> 
+<<
+/V ()
+/T (ItemName[0])
+>> 
+<<
+/V ()
+/T (Cost[0])
+>>]
+/T (Item[0])
+>> 
+<<
+/Kids [
+<<
+/V ()
+/T (GrandTotal[0])
+>>]
+/T (FooterRow[0])
+>>]
+/T (Table1[0])
+>>]
+/T (#subform[0])
+>>]
+/T (form1[0])
+>>]
+>>
+>>
+endobj 
+trailer
+
+<<
+/Root 1 0 R
+>>
+%%EOF
