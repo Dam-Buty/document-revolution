@@ -56,7 +56,7 @@ module.exports = function(_) {
 
               stream.on("end", function() {
                 console.dir(prefix + 'Body');
-                console.dir(body);
+                //console.dir(body);
               })
             });
             msg.once('attributes', function(attrs) {
