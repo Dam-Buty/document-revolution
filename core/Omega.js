@@ -1,5 +1,5 @@
 var moment = require("moment");
-console = require('better-console');
+// console = require('better-console');
 
 module.exports = function() {
   return {

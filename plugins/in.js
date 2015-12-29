@@ -8,7 +8,7 @@ module.exports = function(_) {
     description: "Simple inotify at the root of the application",
 
     params: {                                                       // the content of params is free
-      base: "/home/chad/dev/xdino/patterns/in/"                     // it should not however be accessed from outside
+      base: "/var/www/xdino/in/"                     // it should not however be accessed from outside
     },
 
     watched: {},                                                    // watchers should hold the handlers

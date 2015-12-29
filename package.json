@@ -1,0 +1,14 @@
+{
+  "name": "aido",
+  "description": "Unleash a can of whoopass on your company's documents",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Dam-Buty/document-revolution.git"
+  },
+  "devDependencies": {
+    "es6-promises": "^1.0.10",
+    "imap": "^0.8.15",
+    "moment": "^2.10.6"
+  }
+}
