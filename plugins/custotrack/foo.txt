@@ -1,0 +1,93 @@
+SEMANTIQUE GLOBALE : {
+  Timestamp
+  Opérateur
+}// La sémantique globale est appliquée à chaque bac
+
+BACS
+====
+
+- (E) RECEPTION
+  **création**
+  sémantique : {
+    *Numéro de colis
+    *Date de réception
+    *Site de réception
+    *Destinataire
+    *Expéditeur
+    *Transporteur
+    *Poids du colis
+  }
+  pièces jointes : {
+    x photos
+    Bordereau de réception
+  }
+  actions : {
+    Si pas de numéro
+      ENVOI ETIQUETTE-CUSTOTRACK
+    Sinon
+      ENVOI RECU
+  }
+
+- ETIQUETTE-CUSTOTRACK/:id
+  sémantique : {
+    Identifiant de colis Custotrack (généré)
+  }
+  artefacts : {
+    Etiquette Custotrack
+  }
+  actions : {
+    ENVOI RECU
+  }
+
+- RECU/:id
+  artefacts : {
+    Email de réception
+    Lien de distribution (ENVOI DISTRIBUER)
+    Lien de transfert (ENVOI TRANSFERT)
+  }
+  cron : {            // le cron ne s'active que si
+    2 semaines : {    // l'Entité est toujours dans le même bac
+      ENVOI RELANCE   // à la date
+    }
+  }
+
+- RELANCE/:id
+  artefacts : {
+    Email de relance
+  }
+  cron : {
+    2 semaines : {
+      ENVOI RELANCE
+    }
+  }
+
+- (E) DISTRIBUER/:id
+
+- DISTRIBUTION/:id
+  artefact : {
+    Page de confirmation
+  }
+
+- (E) TRANSFERT/:id
+  semantique : {
+    *Site de destination
+  }
+  artefacts : {
+    Email de transfert
+  }
+
+- (E) DEPART-ITINERAIRE/:itineraire
+  Pour toutes les Entités dans DISTRIBUER
+  Qui sont sur itineraire
+    ENVOI DISTRIBUTION
+
+- (E) SIGNATURE/:id
+  pièces jointes : {
+    signature
+  }
+  actions : {
+    ENVOI LIVRE
+  }
+
+- LIVRE/:id
+  Entity is dead
