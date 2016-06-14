@@ -6,9 +6,11 @@
     "type": "git",
     "url": "git@github.com:Dam-Buty/document-revolution.git"
   },
-  "devDependencies": {
+  "dependencies": {
+    "better-console": "^0.2.4",
     "es6-promises": "^1.0.10",
     "imap": "^0.8.15",
+    "inotify": "^1.4.1",
     "moment": "^2.10.6"
   }
 }

@@ -1,12 +1,12 @@
 var moment = require("moment");
-// console = require('better-console');
+console = require('better-console');
 
 module.exports = function() {
   return {
     name: "Omega",
     exposes: ["dump", "info", "warn", "error"],
 
-    dev: true,                            // dev mode allows dumping objects to the console
+    dev: false,                            // dev mode allows dumping objects to the console
     logLevel: [true, true, true, true],   // [info, warning, error, _ (event handler)]
 
     timestamp: function() {

@@ -1,4 +1,6 @@
-Inotify = require('inotify').Inotify;
+const path = require('path');
+const Inotify = require('inotify').Inotify;
+
 var inotify = new Inotify(); //persistent by default, new Inotify(false) //no persistent
 
 module.exports = function(_) {
@@ -8,15 +10,15 @@ module.exports = function(_) {
     description: "Simple inotify at the root of the application",
 
     params: {                                                       // the content of params is free
-      base: "/var/www/xdino/in/"                     // it should not however be accessed from outside
+      base: "/home/chad/dev/aido/in"                    // it should not however be accessed from outside
     },
 
-    watched: {},                                                    // watchers should hold the handlers
+    watched: {},                                                    // watched should hold the handlers
 
     // Start listening on a route
     startRoute: function(route, data) {
       var watched = {
-        path:      this.params.base + data.path,
+        path:      path.join(this.params.base, data.path),
         watch_for: Inotify.IN_CREATE,
         callback:  function(event) {
           _.emit("dump", event);
@@ -27,7 +29,7 @@ module.exports = function(_) {
           });
         }
       };
-
+      console.error(watched.path);
       this.watched[route] = inotify.addWatch(watched);
     }
   };

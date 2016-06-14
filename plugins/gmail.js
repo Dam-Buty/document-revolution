@@ -1,7 +1,5 @@
 var Imap = require('imap');
 
-var imap =
-
 module.exports = function(_) {
   return {
     type: "async",
